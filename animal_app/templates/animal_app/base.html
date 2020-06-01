@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" type='text/css' href="{% static 'css/style.css' %}">
+    {% bootstrap_javascript jquery='full' %}
+    <title>animalAI</title>
+  </head>
+  <body style="background-image: url('https://s2.best-wallpaper.net/wallpaper/1920x1200/1806/Savannah-Africa-zebras-at-sunset_1920x1200.jpg'); background-size: cover;">
+    <nav class='navbar navbar-expand-lg navbar-light navbar-dark '>
+        <a class='navbar-brand' href="{% url 'animal_app:index' %}">どうぶつはんていAIアプリ</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

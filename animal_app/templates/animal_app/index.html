@@ -1,0 +1,21 @@
+{% extends 'animal_app/base.html' %}
+
+
+{% block content %}
+<div style='color: white'>
+    <h4 class='mt-4 mb-5 border-bottom'>どうぶつはんていAIアプリ</h4>
+    <p>ライオン、トラ、チーターのしゃしんをえらんですいていボタンをクリックしてね！</p>
+    <form action="{% url 'animal_app:predict' %}" method='POST' class='form' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="custom-file">
+                {{ form.image }}
+                <!-- <label for="customFile" class="custom-file-label">
+                    すいていしたいファイルをえらんでね！
+                </label> -->
+            </div>
+        </div>
+        <button type='submit' class='save btn btn-primary'>すいていする</button>
+    </form>
+</div>
+{% endblock %}
